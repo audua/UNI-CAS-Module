@@ -1,0 +1,5 @@
+name = UNI CAS
+description = "Auto suggest username as a user is being added"
+core = 6.x
+package = UNI Modules
+dependencies[] = content
