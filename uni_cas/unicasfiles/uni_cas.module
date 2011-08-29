@@ -1,43 +1,27 @@
-<html>
-<head>
-<script type="text/javascript">
-function showHint(str)
-{
-if (str.length==0)
-  {
-  document.getElementById("txtHint").innerHTML="";
-  return;
-  }
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("GET","sites/all/modules/uni_cas/unicasfiles/userhint.php?q="+str,true);
-xmlhttp.send();
+<?php
+drupal_add_js(drupal_get_path('module', 'uni_cas') .'/unicas.js');
+?>
+
+<?php
+function uni_cas_form_user_register_alter(&$form, &$form_state) {
+  // Modification for the form with the given form ID goes here. For example, if
+  // FORM_ID is "user_register" this code would run only on the user
+  // registration form.
+
+  // Run the Ajax and Onkeyup functions here
+   $form['Add user'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Ajax-based add user'),
+  '#default_value' => $object['Add user'],
+  '#size' => 60,
+  '#maxlength' => 64,
+  '#description' => t('Should run Ajax'),
+  '#id' => 'edit-name',
+);
+
 
 }
+?>
 
-
-</script>
-</head>
-<body>
-
-<p><b>Start typing a name in the input field below:</b></p>
-<form>
-User name: <input type="text" id="entered" onkeyup="showHint(this.value)" size="20" /> <input type="checkbox" name="option1" value="" />
-</form>
 <p>Suggestions: <span id="txtHint"></span></p>
 
-</body>
-</html>
