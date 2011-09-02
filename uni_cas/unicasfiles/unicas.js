@@ -24,3 +24,13 @@ xmlhttp.open("GET","sites/all/modules/uni_cas/unicasfiles/userhint.php?q="+str,t
 xmlhttp.send();
 
 }
+
+$(document).ready(function() {
+      $("#user-register").keyup(function(){
+        showHint(this.value);
+      });
+    });
+
+    
+    
+   
