@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <note>   
-    <node>
-        <user>anna</user>
-    </node>
-    <node>
-        <user>amanda</user>
-    </node>
-    <node>
-        <user>healy</user>
-    </node>
-    <node>
-        <user>faye</user>
-    </node>
-    <node>
-        <user>escobar</user>
-    </node>
-    <node>
-        <user>audua</user>
-    </node>
-    <node>
-        <user>david</user>
-    </node>
-    <node>
-        <user>damon</user>
-    </node>
-    <node>
-        <user>nathan</user>
-    </node>
-    <node>
-        <user>Tove</user>
-    </node>
+    <unicas>
+        <casuser>anna</casuser>
+    </unicas>
+    <unicas>
+        <casuser>amanda1</casuser>
+    </unicas>
+    <unicas>
+        <casuser>healy</casuser>
+    </unicas>
+    <unicas>
+        <casuser>faye</casuser>
+    </unicas>
+    <unicas>
+        <casuser>escobar</casuser>
+    </unicas>
+    <unicas>
+        <casuser>audua</casuser>
+    </unicas>
+    <unicas>
+        <casuser>david</casuser>
+    </unicas>
+    <unicas>
+        <casuser>damon</casuser>
+    </unicas>
+    <unicas>
+        <casuser>nathan</casuser>
+    </unicas>
+    <unicas>
+        <casuser>Tove</casuser>
+    </unicas>
+
+
 </note> 

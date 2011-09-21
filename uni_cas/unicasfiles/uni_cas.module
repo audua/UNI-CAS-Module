@@ -1,6 +1,7 @@
 <?php
-drupal_add_js(drupal_get_path('module', 'uni_cas') .'/unicas.js');
+  // drupal_add_js(drupal_get_path('module', 'uni_cas') .'/unicas.js');
 ?>
+
 
 <?php
   /**
@@ -8,19 +9,32 @@ drupal_add_js(drupal_get_path('module', 'uni_cas') .'/unicas.js');
    *
    * The function is named modulename_form_alter.
    */
-  function uni_cas_form_alter(&$form, $form_state, $form_id) {
+  
+  
+  function uni_cas_form_user_register_alter(&$form, &$form_state) {
     // Normally a switch is used because you may want to alter more than
     // one form and it is easy to add a new case for each form.
-    switch ($form_id) {
-      // This is our form ID.
-      case 'user_register':
+   
+   
+     
+     $result = db_query('SELECT users.name AS users_name FROM users users'); 
       
-       $form['name']['#title'] = t('Ajax Based ID');                     // Our kickin' mods go here.      
-       $form['name']['#description'] = t('Suggestions:');       
+      $url = 'sites/all/modules/uni_cas/unicasfiles/test.xml';
+      $xml = simplexml_load_file($url);          
+    
+    foreach($xml->unicas as $unicas) { 
+          $existing_user = db_fetch_object($result);       
+ 
+        if (strtolower($existing_user->users_name) == strtolower($unicas->casuser))  {
+          $response = "Match found";
+      }
+      
         
-        break;
-    }
-  }
+   
+ }   
+  dsm($response);                     
+   }
+
 ?>
 
-<p>Suggestions: <span id="txtHint"></span></p>
+
